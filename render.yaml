@@ -4,7 +4,7 @@ services:
     env: docker
     plan: starter
     dockerCommand: ./build-and-run.sh
-    repo: https://github.com/rrmoutonbt/blockchain-blueprint.git
+    repo: https://github.com/rrmoutonbt/blueprint-repository.git
     branch: main
     buildCommand: ./setup.sh
     envVars:
