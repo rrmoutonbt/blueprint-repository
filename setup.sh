@@ -25,6 +25,6 @@ cd build
 
 # Run CMake with proper paths
 echo "Running CMake..."
-cmake -DBLOCKCHAIN_CORE_DIR=../blockchain-core \
-      -DISO_COMPLIANCE_DIR=../iso-compliance \
-      -DBLOCKCHAIN_NETWORK_DIR=../blockchain-network \
+cmake -DBLOCKCHAIN_CORE_DIR=../Future-Exchange \
+      -DISO_COMPLIANCE_DIR=../ISO-Complian-on-chain-enforcement-7- \
+      -DBLOCKCHAIN_NETWORK_DIR=../Network-Layer-ISO-Compliant- \
