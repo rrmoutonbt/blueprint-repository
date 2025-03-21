@@ -3,10 +3,14 @@ services:
     name: iso-blockchain-node
     env: docker
     plan: starter
-    dockerCommand: ./build-and-run.sh
+    dockerCommand: ./start-with-health-check.sh
     repo: https://github.com/rrmoutonbt/blueprint-repository.git
     branch: main
     buildCommand: ./setup.sh
+    healthCheckPath: /health
+    healthCheckTimeout: 120
+    healthCheckInterval: 15
+    autoDeploy: false
     envVars:
       - key: NODE_PORT
         value: 8080
@@ -23,11 +27,13 @@ services:
       - key: ISO_17442_ENABLED
         value: true
       - key: BLOCKCHAIN_CORE_REPO
-        value: https://github.com/your-username/blockchain-core.git
+        value: https://github.com/rrmoutonbt/blockchain-core.git
       - key: ISO_COMPLIANCE_REPO
-        value: https://github.com/your-username/iso-compliance.git
+        value: https://github.com/rrmoutonbt/iso-compliance.git
       - key: BLOCKCHAIN_NETWORK_REPO
-        value: https://github.com/your-username/blockchain-network.git
+        value: https://github.com/rrmoutonbt/blockchain-network.git
+      - key: RENDER_DISCOVERY_SERVICE
+        sync: false
     disk:
       name: blockchain-data
       mountPath: /app/data
