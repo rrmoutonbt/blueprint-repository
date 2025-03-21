@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: iso-blockchain-node
+    env: docker
+    plan: starter
+    dockerCommand: ./build-and-run.sh
+    repo: https://github.com/your-username/blockchain-blueprint.git
+    branch: main
+    buildCommand: ./setup.sh
+    envVars:
+      - key: NODE_PORT
+        value: 8080
+      - key: P2P_PORT
+        value: 9000
+      - key: DIFFICULTY
+        value: 2
+      - key: MINING_REWARD
+        value: 10.0
+      - key: ISO_20022_ENABLED
+        value: true
+      - key: ISO_10383_ENABLED
+        value: true
+      - key: ISO_17442_ENABLED
+        value: true
+      - key: BLOCKCHAIN_CORE_REPO
+        value: https://github.com/your-username/blockchain-core.git
+      - key: ISO_COMPLIANCE_REPO
+        value: https://github.com/your-username/iso-compliance.git
+      - key: BLOCKCHAIN_NETWORK_REPO
+        value: https://github.com/your-username/blockchain-network.git
+    disk:
+      name: blockchain-data
+      mountPath: /app/data
+      sizeGB: 10
