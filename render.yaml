@@ -27,11 +27,7 @@ services:
       - key: ISO_17442_ENABLED
         value: true
       - key: BLOCKCHAIN_CORE_REPO
-        value: https://github.com/rrmoutonbt/blockchain-core.git
-      - key: ISO_COMPLIANCE_REPO
-        value: https://github.com/rrmoutonbt/iso-compliance.git
-      - key: BLOCKCHAIN_NETWORK_REPO
-        value: https://github.com/rrmoutonbt/blockchain-network.git
+        value: https://github.com/rrmoutonbt/Future-Exchange-blockchain-core.git
       - key: RENDER_DISCOVERY_SERVICE
         sync: false
     disk:
